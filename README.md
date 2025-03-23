@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+🛡️ Visitor Management System
+Visitor Management System (VMS) is a web-based application that enables secure and efficient visitor check-ins using QR Code scanning. It provides an Admin Dashboard for tracking visitors, a QR-based check-in system, and a modern UI for seamless user experience.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📌 Features
+✅ Visitor Registration
+    Visitors can register with their name, contact, and purpose of visit.
+    Generates a unique QR Code for each visitor.
+✅ QR Code Check-In
+    Visitors scan their QR Code using the built-in QR Scanner.
+    The system verifies the visitor and marks them as checked-in.
+✅ Admin Dashboard
+    View a list of all visitors with real-time updates.
+    Filter and search visitors based on status or date.
+    Enhanced dark mode support for better UI experience.
+✅ Modern UI/UX
+    Fully responsive and mobile-friendly interface.
+    Smooth animations using Framer Motion.
+    Clean TailwindCSS styling for better usability.
 
-## Available Scripts
+🛠️ Tech Stack
+Technology      Usage
+React.js	      Frontend UI
+Node.js	        Backend API
+Express.js	    Server framework
+MongoDB	        Database storage
+Framer          Motion UI Animations
+TailwindCSS	    Modern Styling
+html5-qrcode	  QR Code Scanning
 
-In the project directory, you can run:
+📦 visitor-management-system
+├── 📂 server        
+│   ├── 📂 config       
+│   │   ├── db.js
+│   ├── 📂 models        
+│   │   ├── Visitor.js
+│   ├── 📂 routes       
+│   │   ├── visitorRoutes.js
+│   ├── 📂 controllers  
+│   │   ├── visitorController.js
+│   ├── 📂 middleware     
+│   │   ├── errorMiddleware.js
+│   ├── .env            
+│   ├── server.js       
+│   ├── package.json     
+│   ├── README.md        
+│
+├── 📂 vms-frontend   
+│   ├── 📂 public         
+│   │   ├── index.html
+│   ├── 📂 src        
+│   │   ├── 📂 components 
+│   │   │   ├── Navbar.js
+│   │   │   ├── QRScanner.js
+│   │   │   ├── QRCodeGenerator.js
+│   │   │   ├── VisitorForm.js
+│   │   │   ├── VisitorList.js
+│   │   ├── 📂 pages   
+│   │   │   ├── Home.js
+│   │   │   ├── AdminDashboard.js
+│   │   │   ├── VisitorRegistration.js
+│   │   ├── 📂 styles 
+│   │   │   ├── index.css
+│   │   ├── 📂 utils
+│   │   │   ├── api.js
+│   │   ├── App.js         
+│   │   ├── index.js       
+│   ├── tailwind.config.js 
+│   ├── package.json       
+│   ├── README.md          
+│
+├── 📜 .gitignore         
+├── 📜 README.md          
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🚀 Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/utbirla/visitor-management-system.git
+cd visitor-management-system
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2️⃣ Install Dependencies
+Backend Setup:
+    cd server
+    npm install
 
-### `npm test`
+Frontend Setup:
+  cd ../vms-frontend
+  npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3️⃣ Configure Environment Variables
+Create a .env file inside server/ and add:
+    MONGO_URI=your-mongodb-connection-string
+    PORT=5001
+    
+4️⃣ Run the Application
+Start Backend:
+    cd server
+    npm start
 
-### `npm run build`
+Start Frontend:
+    cd ../vms-frontend
+    npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🎯 How It Works
+1️⃣ Visitor Registers → Fills out the form & gets a QR Code.
+2️⃣ Check-In with QR Scanner → Admin scans the QR to verify.
+3️⃣ Admin Dashboard → Admin tracks all visitor details.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
